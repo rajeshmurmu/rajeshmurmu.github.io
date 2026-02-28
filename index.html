@@ -1,0 +1,1461 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rajesh Murmu — Full Stack MERN Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+  </head>
+  <body
+    class="dark:bg-navy-900 bg-slate-50 dark:text-slate-100 text-slate-800 overflow-x-hidden transition-colors duration-300 min-h-screen"
+  >
+    <!-- Ambient blobs -->
+    <div
+      class="blob w-150 h-125 -top-32 -left-24 dark:bg-blue-600/8 bg-blue-400/[0.07]"
+    ></div>
+    <div
+      class="blob w-125 h-125 bottom-0 -right-20 dark:bg-purple-600/8 bg-purple-400/[0.07]"
+    ></div>
+    <div
+      class="blob w-87.5 h-87.5 top-1/2 left-1/3 dark:bg-teal-600/5 bg-teal-400/5"
+    ></div>
+
+    <!-- ======== NAVBAR ======== -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-16 h-16 dark:bg-navy-900/80 bg-white/80 backdrop-blur-xl dark:border-b dark:border-white/6 border-b border-black/5 transition-colors duration-300"
+    >
+      <a
+        href="#hero"
+        class="font-syne font-extrabold text-xl grad-accent tracking-tight"
+        >RM.</a
+      >
+
+      <ul class="hidden md:flex items-center gap-8 list-none m-0 p-0">
+        <li>
+          <a
+            href="#about"
+            class="nav-a text-sm font-medium dark:text-slate-400 text-slate-500 hover:dark:text-white hover:text-slate-900 no-underline"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="#skills"
+            class="nav-a text-sm font-medium dark:text-slate-400 text-slate-500 hover:dark:text-white hover:text-slate-900 no-underline"
+            >Skills</a
+          >
+        </li>
+        <li>
+          <a
+            href="#projects"
+            class="nav-a text-sm font-medium dark:text-slate-400 text-slate-500 hover:dark:text-white hover:text-slate-900 no-underline"
+            >Projects</a
+          >
+        </li>
+        <li>
+          <a
+            href="#education"
+            class="nav-a text-sm font-medium dark:text-slate-400 text-slate-500 hover:dark:text-white hover:text-slate-900 no-underline"
+            >Education</a
+          >
+        </li>
+        <li>
+          <a
+            href="#contact"
+            class="nav-a text-sm font-medium dark:text-slate-400 text-slate-500 hover:dark:text-white hover:text-slate-900 no-underline"
+            >Contact</a
+          >
+        </li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <button
+          onclick="toggleTheme()"
+          class="flex items-center gap-2 px-3 py-1.5 glass rounded-full text-sm dark:text-slate-300 text-slate-600 hover:border-blue-500/50 border border-transparent transition-all duration-200 cursor-pointer"
+        >
+          <span id="ti">☀️</span
+          ><span id="tl" class="hidden sm:inline text-xs font-medium"
+            >Light</span
+          >
+        </button>
+        <button
+          onclick="toggleMenu()"
+          class="md:hidden flex flex-col justify-center gap-1.25 w-8 h-8 cursor-pointer"
+          aria-label="Menu"
+        >
+          <span
+            class="block w-5 h-0.5 dark:bg-white bg-slate-800 rounded"
+          ></span>
+          <span
+            class="block w-5 h-0.5 dark:bg-white bg-slate-800 rounded"
+          ></span>
+          <span
+            class="block w-3 h-0.5 dark:bg-white bg-slate-800 rounded"
+          ></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobileMenu"
+      class="hidden fixed top-16 inset-x-0 z-40 dark:bg-navy-900 bg-white border-b dark:border-white/6 border-black/5 px-6 py-5 flex-col gap-4"
+    >
+      <a
+        href="#about"
+        onclick="closeMenu()"
+        class="text-base font-medium dark:text-slate-200 text-slate-700 no-underline"
+        >About</a
+      >
+      <a
+        href="#skills"
+        onclick="closeMenu()"
+        class="text-base font-medium dark:text-slate-200 text-slate-700 no-underline"
+        >Skills</a
+      >
+      <a
+        href="#projects"
+        onclick="closeMenu()"
+        class="text-base font-medium dark:text-slate-200 text-slate-700 no-underline"
+        >Projects</a
+      >
+      <a
+        href="#education"
+        onclick="closeMenu()"
+        class="text-base font-medium dark:text-slate-200 text-slate-700 no-underline"
+        >Education</a
+      >
+      <a
+        href="#contact"
+        onclick="closeMenu()"
+        class="text-base font-medium dark:text-slate-200 text-slate-700 no-underline"
+        >Contact</a
+      >
+    </div>
+
+    <!-- ======== HERO ======== -->
+    <section
+      id="hero"
+      class="relative z-10 min-h-screen flex items-center justify-center px-6 pt-24 pb-16"
+    >
+      <div class="max-w-3xl mx-auto text-center">
+        <!-- Badge -->
+        <div
+          class="inline-flex items-center gap-2.5 glass rounded-full px-5 py-2 text-xs font-semibold text-blue-400 tracking-wide mb-8 animate-fade-up-1"
+        >
+          <span
+            class="w-2 h-2 rounded-full bg-teal-400 animate-pulse-dot shrink-0"
+          ></span>
+          Open to Full Stack Developer Roles
+        </div>
+
+        <!-- Title -->
+        <h1
+          class="font-syne font-extrabold leading-[1.06] tracking-tight mb-5 animate-fade-up-2"
+          style="font-size: clamp(2.8rem, 7vw, 5.5rem)"
+        >
+          <span class="block grad-text"
+            >Hi, I'm <span class="line-accent grad-text">Rajesh</span></span
+          >
+          <span
+            class="block pt-4 dark:text-slate-400 text-slate-500 font-semibold mt-1"
+            style="font-size: clamp(1.4rem, 3.5vw, 2.5rem)"
+            >Full Stack Developer</span
+          >
+        </h1>
+
+        <!-- Tagline -->
+        <p
+          class="dark:text-slate-400 text-slate-500 text-base md:text-lg max-w-lg mx-auto leading-relaxed mb-10 animate-fade-up-3"
+        >
+          Building scalable web applications with the MERN stack — from
+          pixel-perfect UIs to robust server-side architectures.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div
+          class="flex flex-wrap items-center justify-center gap-4 mb-12 animate-fade-up-4"
+        >
+          <a
+            href="#projects"
+            class="btn-grad inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold text-white no-underline"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              viewBox="0 0 24 24"
+            >
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <path d="M8 21h8M12 17v4" />
+            </svg>
+            View Projects
+          </a>
+          <a
+            href="#contact"
+            class="btn-ghost inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold glass dark:text-white text-slate-700 border border-white/10 no-underline"
+          >
+            <svg
+              class="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+              />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            Contact Me
+          </a>
+        </div>
+
+        <!-- Tech pills -->
+        <div class="flex flex-wrap justify-center gap-2.5 animate-fade-up-5">
+          <span
+            class="glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-400 text-slate-500"
+            >⚛️ React.js</span
+          >
+          <span
+            class="glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-400 text-slate-500"
+            >🟩 Node.js</span
+          >
+          <span
+            class="glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-400 text-slate-500"
+            >🍃 MongoDB</span
+          >
+          <span
+            class="glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-400 text-slate-500"
+            >⚡ Express.js</span
+          >
+          <span
+            class="glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-400 text-slate-500"
+            >🎨 Tailwind CSS</span
+          >
+        </div>
+
+        <!-- Scroll indicator -->
+        <div
+          class="flex flex-col items-center gap-2 mt-16 text-xs dark:text-slate-600 text-slate-400 animate-fade-up-6"
+        >
+          <div
+            class="w-px h-12 animate-scroll-bar"
+            style="background: linear-gradient(to bottom, #4f8eff, transparent)"
+          ></div>
+          <span>Scroll</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== ABOUT ======== -->
+    <section id="about" class="relative z-10 py-24 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="reveal">
+          <span
+            class="inline-flex items-center gap-2.5 text-xs font-bold tracking-[0.14em] uppercase text-blue-400 mb-3"
+          >
+            <span class="w-6 h-0.5 rounded" style="background: #4f8eff"></span
+            >About Me
+          </span>
+        </div>
+        <h2
+          class="font-syne font-extrabold text-4xl md:text-5xl leading-tight tracking-tight mb-12 reveal d1"
+        >
+          Who I Am &amp; <span class="line-accent">What I Build</span>
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- Left -->
+          <div class="glass rounded-2xl p-8 reveal d1">
+            <p
+              class="dark:text-slate-400 text-slate-600 text-[0.95rem] leading-[1.8] mb-4"
+            >
+              Hi! I'm
+              <strong class="dark:text-white text-slate-900 font-semibold"
+                >Rajesh Murmur</strong
+              >, a passionate
+              <strong class="dark:text-white text-slate-900 font-semibold"
+                >Full Stack Developer</strong
+              >
+              specializing in the MERN stack. I love turning ideas into
+              polished, production-ready apps.
+            </p>
+            <p
+              class="dark:text-slate-400 text-slate-600 text-[0.95rem] leading-[1.8] mb-6"
+            >
+              I am currently pursuing
+              <strong class="dark:text-white text-slate-900 font-semibold"
+                >BCA from Osmania University</strong
+              >
+              and have been relentlessly building projects and learning modern
+              tech. Currently seeking my
+              <strong class="dark:text-white text-slate-900 font-semibold"
+                >first professional role</strong
+              >
+              as a Full Stack Developer.
+            </p>
+            <div
+              class="rounded-xl p-4 text-sm leading-relaxed dark:text-slate-400 text-slate-600"
+              style="
+                background: linear-gradient(
+                  135deg,
+                  rgba(79, 142, 255, 0.08),
+                  rgba(124, 92, 255, 0.08)
+                );
+                border: 1px solid rgba(79, 142, 255, 0.2);
+              "
+            >
+              🎯 <strong class="text-blue-400">Career Goal:</strong> Land a Full
+              Stack Developer role (3-6 LPA) where I can contribute to impactful
+              products, grow with experienced engineers, and build a long-term
+              career in software.
+            </div>
+            <!-- Stats -->
+            <div class="grid grid-cols-3 gap-3 mt-6">
+              <div class="glass rounded-xl p-3 text-center">
+                <div class="font-syne font-extrabold text-2xl grad-accent">
+                  3+
+                </div>
+                <div class="text-xs dark:text-slate-500 text-slate-400 mt-1">
+                  Projects Built
+                </div>
+              </div>
+              <div class="glass rounded-xl p-3 text-center">
+                <div class="font-syne font-extrabold text-2xl grad-accent">
+                  6+
+                </div>
+                <div class="text-xs dark:text-slate-500 text-slate-400 mt-1">
+                  Technologies
+                </div>
+              </div>
+              <div class="glass rounded-xl p-3 text-center">
+                <div class="font-syne font-extrabold text-2xl grad-accent">
+                  ∞
+                </div>
+                <div class="text-xs dark:text-slate-500 text-slate-400 mt-1">
+                  Motivated
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right -->
+          <div class="glass rounded-2xl p-8 reveal d2">
+            <h3 class="font-syne font-bold text-lg mb-6">
+              What I Bring to the Table
+            </h3>
+            <div class="flex flex-col gap-5">
+              <div class="flex gap-4 items-start">
+                <div
+                  class="w-10 h-10 rounded-xl shrink-0 flex items-center justify-center text-xl"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      rgba(79, 142, 255, 0.18),
+                      rgba(79, 142, 255, 0.04)
+                    );
+                  "
+                >
+                  ⚛️
+                </div>
+                <div>
+                  <p class="font-semibold text-sm mb-1">Frontend Development</p>
+                  <p
+                    class="text-xs dark:text-slate-400 text-slate-500 leading-relaxed"
+                  >
+                    Responsive, accessible UIs with React.js, Tailwind CSS, and
+                    modern HTML/CSS patterns.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start">
+                <div
+                  class="w-10 h-10 rounded-xl shrink-0 flex items-center justify-center text-xl"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      rgba(124, 92, 255, 0.18),
+                      rgba(124, 92, 255, 0.04)
+                    );
+                  "
+                >
+                  🔧
+                </div>
+                <div>
+                  <p class="font-semibold text-sm mb-1">Backend Development</p>
+                  <p
+                    class="text-xs dark:text-slate-400 text-slate-500 leading-relaxed"
+                  >
+                    RESTful APIs with Node.js &amp; Express. Secure JWT auth.
+                    Clean MVC architecture.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start">
+                <div
+                  class="w-10 h-10 rounded-xl shrink-0 flex items-center justify-center text-xl"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      rgba(0, 212, 170, 0.18),
+                      rgba(0, 212, 170, 0.04)
+                    );
+                  "
+                >
+                  🍃
+                </div>
+                <div>
+                  <p class="font-semibold text-sm mb-1">Database Design</p>
+                  <p
+                    class="text-xs dark:text-slate-400 text-slate-500 leading-relaxed"
+                  >
+                    MongoDB schema design, Mongoose ODM, aggregation pipelines,
+                    and data modeling.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start">
+                <div
+                  class="w-10 h-10 rounded-xl shrink-0 flex items-center justify-center text-xl"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      rgba(255, 180, 0, 0.18),
+                      rgba(255, 180, 0, 0.04)
+                    );
+                  "
+                >
+                  🚀
+                </div>
+                <div>
+                  <p class="font-semibold text-sm mb-1">
+                    Fast Learner &amp; Collaborator
+                  </p>
+                  <p
+                    class="text-xs dark:text-slate-400 text-slate-500 leading-relaxed"
+                  >
+                    I pick up new technologies quickly and thrive in fast-paced,
+                    team-driven environments.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="relative z-10 max-w-6xl mx-auto px-6">
+      <div class="h-px dark:bg-white/5 bg-black/5"></div>
+    </div>
+
+    <!-- ======== SKILLS ======== -->
+    <section
+      id="skills"
+      class="relative z-10 py-24 px-6 dark:bg-navy-800/50 bg-slate-100/60"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div class="reveal">
+          <span
+            class="inline-flex items-center gap-2.5 text-xs font-bold tracking-[0.14em] uppercase text-blue-400 mb-3"
+          >
+            <span class="w-6 h-0.5 rounded" style="background: #4f8eff"></span
+            >Technical Skills
+          </span>
+        </div>
+        <h2
+          class="font-syne font-extrabold text-4xl md:text-5xl leading-tight tracking-tight mb-3 reveal d1"
+        >
+          My Tech <span class="line-accent">Toolkit</span>
+        </h2>
+        <p
+          class="dark:text-slate-400 text-slate-500 text-base mb-12 max-w-md reveal d2"
+        >
+          Technologies I use daily to ship fast, scalable, and polished
+          software.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
+          <div class="glass rounded-2xl p-6 card-hover reveal d1">
+            <div class="flex items-center gap-3 mb-5">
+              <div
+                class="w-11 h-11 rounded-xl flex items-center justify-center text-xl"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(79, 142, 255, 0.2),
+                    rgba(79, 142, 255, 0.04)
+                  );
+                "
+              >
+                ⚛️
+              </div>
+              <span class="font-syne font-bold">Frontend</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="skill-pill glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-300 text-slate-600 border border-transparent"
+                >React.js</span
+              >
+              <span
+                class="skill-pill glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-300 text-slate-600 border border-transparent"
+                >HTML5</span
+              >
+              <span
+                class="skill-pill glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-300 text-slate-600 border border-transparent"
+                >CSS3</span
+              >
+              <span
+                class="skill-pill glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-300 text-slate-600 border border-transparent"
+                >Tailwind CSS</span
+              >
+              <span
+                class="skill-pill glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-300 text-slate-600 border border-transparent"
+                >JavaScript</span
+              >
+              <span
+                class="skill-pill glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-300 text-slate-600 border border-transparent"
+                >Responsive</span
+              >
+            </div>
+          </div>
+
+          <div class="glass rounded-2xl p-6 card-hover reveal d2">
+            <div class="flex items-center gap-3 mb-5">
+              <div
+                class="w-11 h-11 rounded-xl flex items-center justify-center text-xl"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(124, 92, 255, 0.2),
+                    rgba(124, 92, 255, 0.04)
+                  );
+                "
+              >
+                🔧
+              </div>
+              <span class="font-syne font-bold">Backend</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="skill-pill glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-300 text-slate-600 border border-transparent"
+                >Node.js</span
+              >
+              <span
+                class="skill-pill glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-300 text-slate-600 border border-transparent"
+                >Express.js</span
+              >
+              <span
+                class="skill-pill glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-300 text-slate-600 border border-transparent"
+                >REST APIs</span
+              >
+              <span
+                class="skill-pill glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-300 text-slate-600 border border-transparent"
+                >JWT Auth</span
+              >
+              <span
+                class="skill-pill glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-300 text-slate-600 border border-transparent"
+                >Bcrypt</span
+              >
+              <span
+                class="skill-pill glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-300 text-slate-600 border border-transparent"
+                >MVC Pattern</span
+              >
+            </div>
+          </div>
+
+          <div class="glass rounded-2xl p-6 card-hover reveal d3">
+            <div class="flex items-center gap-3 mb-5">
+              <div
+                class="w-11 h-11 rounded-xl flex items-center justify-center text-xl"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(0, 212, 170, 0.2),
+                    rgba(0, 212, 170, 0.04)
+                  );
+                "
+              >
+                🍃
+              </div>
+              <span class="font-syne font-bold">Database</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="skill-pill glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-300 text-slate-600 border border-transparent"
+                >MongoDB</span
+              >
+              <span
+                class="skill-pill glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-300 text-slate-600 border border-transparent"
+                >Mongoose</span
+              >
+              <span
+                class="skill-pill glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-300 text-slate-600 border border-transparent"
+                >Aggregation</span
+              >
+              <span
+                class="skill-pill glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-300 text-slate-600 border border-transparent"
+                >CRUD Ops</span
+              >
+              <span
+                class="skill-pill glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-300 text-slate-600 border border-transparent"
+                >Schema Design</span
+              >
+            </div>
+          </div>
+
+          <div class="glass rounded-2xl p-6 card-hover reveal d4">
+            <div class="flex items-center gap-3 mb-5">
+              <div
+                class="w-11 h-11 rounded-xl flex items-center justify-center text-xl"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(255, 180, 0, 0.2),
+                    rgba(255, 180, 0, 0.04)
+                  );
+                "
+              >
+                🛠️
+              </div>
+              <span class="font-syne font-bold">Tools</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="skill-pill glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-300 text-slate-600 border border-transparent"
+                >Git</span
+              >
+              <span
+                class="skill-pill glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-300 text-slate-600 border border-transparent"
+                >GitHub</span
+              >
+              <span
+                class="skill-pill glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-300 text-slate-600 border border-transparent"
+                >Postman</span
+              >
+              <span
+                class="skill-pill glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-300 text-slate-600 border border-transparent"
+                >VS Code</span
+              >
+              <span
+                class="skill-pill glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-300 text-slate-600 border border-transparent"
+                >npm</span
+              >
+              <span
+                class="skill-pill glass rounded-lg px-3 py-1.5 text-xs font-medium dark:text-slate-300 text-slate-600 border border-transparent"
+                >Vercel</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6">
+      <div class="h-px dark:bg-white/5 bg-black/5"></div>
+    </div>
+
+    <!-- ======== PROJECTS ======== -->
+    <section id="projects" class="relative z-10 py-24 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="reveal">
+          <span
+            class="inline-flex items-center gap-2.5 text-xs font-bold tracking-[0.14em] uppercase text-blue-400 mb-3"
+          >
+            <span class="w-6 h-0.5 rounded" style="background: #4f8eff"></span
+            >Portfolio
+          </span>
+        </div>
+        <h2
+          class="font-syne font-extrabold text-4xl md:text-5xl leading-tight tracking-tight mb-3 reveal d1"
+        >
+          Projects I've <span class="line-accent">Built</span>
+        </h2>
+        <p
+          class="dark:text-slate-400 text-slate-500 text-base mb-12 max-w-md reveal d2"
+        >
+          End-to-end MERN projects demonstrating full-stack capabilities.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          <!-- Job Tracker -->
+          <div
+            class="proj-card card-hover glass rounded-2xl overflow-hidden reveal d1"
+          >
+            <div
+              class="h-48 flex items-center justify-center text-5xl relative overflow-hidden"
+              style="background: linear-gradient(135deg, #0d2040, #1a3a6b)"
+            >
+              <div
+                class="absolute inset-0"
+                style="
+                  background: radial-gradient(
+                    ellipse at 30% 40%,
+                    rgba(79, 142, 255, 0.4),
+                    transparent 65%
+                  );
+                "
+              ></div>
+              <span class="relative z-10 animate-float">📊</span>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span
+                  class="text-[10px] font-bold px-2.5 py-1 rounded-full"
+                  style="
+                    background: rgba(79, 142, 255, 0.13);
+                    color: #4f8eff;
+                    border: 1px solid rgba(79, 142, 255, 0.28);
+                  "
+                  >MERN</span
+                >
+                <span
+                  class="text-[10px] font-bold px-2.5 py-1 rounded-full"
+                  style="
+                    background: rgba(124, 92, 255, 0.13);
+                    color: #7c5cff;
+                    border: 1px solid rgba(124, 92, 255, 0.28);
+                  "
+                  >JWT Auth</span
+                >
+                <span
+                  class="text-[10px] font-bold px-2.5 py-1 rounded-full"
+                  style="
+                    background: rgba(0, 212, 170, 0.1);
+                    color: #00d4aa;
+                    border: 1px solid rgba(0, 212, 170, 0.28);
+                  "
+                  >Charts</span
+                >
+                <span
+                  class="text-[10px] font-bold px-2.5 py-1 rounded-full"
+                  style="
+                    background: rgba(255, 160, 50, 0.1);
+                    color: #ff9d2a;
+                    border: 1px solid rgba(255, 160, 50, 0.28);
+                  "
+                  >Filters</span
+                >
+              </div>
+              <h3 class="font-syne font-bold text-lg mb-2">Job Tracker App</h3>
+              <p
+                class="dark:text-slate-400 text-slate-500 text-sm leading-relaxed mb-4"
+              >
+                A full-featured job application tracker with secure JWT auth,
+                real-time status charts via Recharts, advanced filters, and full
+                MERN RESTful API design.
+              </p>
+              <div class="flex gap-3">
+                <a
+                  href="#"
+                  class="btn-grad inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-lg text-white no-underline"
+                >
+                  <svg
+                    class="w-3 h-3"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"
+                    />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                  Live Demo
+                </a>
+                <a
+                  href="#"
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-lg glass dark:text-slate-300 text-slate-600 border border-white/10 hover:border-blue-500/40 no-underline transition-all duration-200"
+                >
+                  <svg
+                    class="w-3 h-3"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"
+                    />
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- E-Commerce -->
+          <div
+            class="proj-card card-hover glass rounded-2xl overflow-hidden reveal d2"
+          >
+            <div
+              class="h-48 flex items-center justify-center text-5xl relative overflow-hidden"
+              style="background: linear-gradient(135deg, #200d40, #3a1a6b)"
+            >
+              <div
+                class="absolute inset-0"
+                style="
+                  background: radial-gradient(
+                    ellipse at 70% 40%,
+                    rgba(124, 92, 255, 0.4),
+                    transparent 65%
+                  );
+                "
+              ></div>
+              <span
+                class="relative z-10 animate-float"
+                style="animation-delay: 0.5s"
+                >🛒</span
+              >
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span
+                  class="text-[10px] font-bold px-2.5 py-1 rounded-full"
+                  style="
+                    background: rgba(79, 142, 255, 0.13);
+                    color: #4f8eff;
+                    border: 1px solid rgba(79, 142, 255, 0.28);
+                  "
+                  >MERN</span
+                >
+                <span
+                  class="text-[10px] font-bold px-2.5 py-1 rounded-full"
+                  style="
+                    background: rgba(124, 92, 255, 0.13);
+                    color: #7c5cff;
+                    border: 1px solid rgba(124, 92, 255, 0.28);
+                  "
+                  >Stripe</span
+                >
+                <span
+                  class="text-[10px] font-bold px-2.5 py-1 rounded-full"
+                  style="
+                    background: rgba(0, 212, 170, 0.1);
+                    color: #00d4aa;
+                    border: 1px solid rgba(0, 212, 170, 0.28);
+                  "
+                  >Admin Panel</span
+                >
+                <span
+                  class="text-[10px] font-bold px-2.5 py-1 rounded-full"
+                  style="
+                    background: rgba(255, 160, 50, 0.1);
+                    color: #ff9d2a;
+                    border: 1px solid rgba(255, 160, 50, 0.28);
+                  "
+                  >Cart</span
+                >
+              </div>
+              <h3 class="font-syne font-bold text-lg mb-2">E-commerce App</h3>
+              <p
+                class="dark:text-slate-400 text-slate-500 text-sm leading-relaxed mb-4"
+              >
+                Full-stack e-commerce with product listings, cart, Stripe
+                payment integration, and a dedicated admin panel for inventory
+                and order management.
+              </p>
+              <div class="flex gap-3">
+                <a
+                  href="#"
+                  class="btn-grad inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-lg text-white no-underline"
+                >
+                  <svg
+                    class="w-3 h-3"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"
+                    />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                  Live Demo
+                </a>
+                <a
+                  href="#"
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-lg glass dark:text-slate-300 text-slate-600 border border-white/10 hover:border-blue-500/40 no-underline transition-all duration-200"
+                >
+                  <svg
+                    class="w-3 h-3"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"
+                    />
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Portfolio -->
+          <div
+            class="proj-card card-hover glass rounded-2xl overflow-hidden reveal d3"
+          >
+            <div
+              class="h-48 flex items-center justify-center text-5xl relative overflow-hidden"
+              style="background: linear-gradient(135deg, #0d4030, #1a6b4a)"
+            >
+              <div
+                class="absolute inset-0"
+                style="
+                  background: radial-gradient(
+                    ellipse at 50% 40%,
+                    rgba(0, 212, 170, 0.4),
+                    transparent 65%
+                  );
+                "
+              ></div>
+              <span
+                class="relative z-10 animate-float"
+                style="animation-delay: 1s"
+                >🌐</span
+              >
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-1.5 mb-3">
+                <span
+                  class="text-[10px] font-bold px-2.5 py-1 rounded-full"
+                  style="
+                    background: rgba(79, 142, 255, 0.13);
+                    color: #4f8eff;
+                    border: 1px solid rgba(79, 142, 255, 0.28);
+                  "
+                  >Tailwind</span
+                >
+                <span
+                  class="text-[10px] font-bold px-2.5 py-1 rounded-full"
+                  style="
+                    background: rgba(124, 92, 255, 0.13);
+                    color: #7c5cff;
+                    border: 1px solid rgba(124, 92, 255, 0.28);
+                  "
+                  >JavaScript</span
+                >
+                <span
+                  class="text-[10px] font-bold px-2.5 py-1 rounded-full"
+                  style="
+                    background: rgba(0, 212, 170, 0.1);
+                    color: #00d4aa;
+                    border: 1px solid rgba(0, 212, 170, 0.28);
+                  "
+                  >Responsive</span
+                >
+                <span
+                  class="text-[10px] font-bold px-2.5 py-1 rounded-full"
+                  style="
+                    background: rgba(255, 160, 50, 0.1);
+                    color: #ff9d2a;
+                    border: 1px solid rgba(255, 160, 50, 0.28);
+                  "
+                  >Animations</span
+                >
+              </div>
+              <h3 class="font-syne font-bold text-lg mb-2">
+                Portfolio Website
+              </h3>
+              <p
+                class="dark:text-slate-400 text-slate-500 text-sm leading-relaxed mb-4"
+              >
+                This very portfolio — modern dark-themed developer portfolio
+                with glassmorphism, scroll animations, dark mode toggle, and
+                fully responsive Tailwind layout.
+              </p>
+              <div class="flex gap-3">
+                <a
+                  href="#"
+                  class="btn-grad inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-lg text-white no-underline"
+                >
+                  <svg
+                    class="w-3 h-3"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"
+                    />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                  Live Demo
+                </a>
+                <a
+                  href="#"
+                  class="inline-flex items-center gap-1.5 text-xs font-semibold px-4 py-2 rounded-lg glass dark:text-slate-300 text-slate-600 border border-white/10 hover:border-blue-500/40 no-underline transition-all duration-200"
+                >
+                  <svg
+                    class="w-3 h-3"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"
+                    />
+                  </svg>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6">
+      <div class="h-px dark:bg-white/5 bg-black/5"></div>
+    </div>
+
+    <!-- ======== EDUCATION ======== -->
+    <section
+      id="education"
+      class="relative z-10 py-24 px-6 dark:bg-navy-800/50 bg-slate-100/60"
+    >
+      <div class="max-w-6xl mx-auto">
+        <div class="reveal">
+          <span
+            class="inline-flex items-center gap-2.5 text-xs font-bold tracking-[0.14em] uppercase text-blue-400 mb-3"
+          >
+            <span class="w-6 h-0.5 rounded" style="background: #4f8eff"></span
+            >Education
+          </span>
+        </div>
+        <h2
+          class="font-syne font-extrabold text-4xl md:text-5xl leading-tight tracking-tight mb-3 reveal d1"
+        >
+          Academic <span class="line-accent">Background</span>
+        </h2>
+        <p
+          class="dark:text-slate-400 text-slate-500 text-base mb-12 max-w-md reveal d2"
+        >
+          My educational foundation that powered my path into software
+          development.
+        </p>
+
+        <div class="max-w-2xl relative">
+          <!-- Timeline line -->
+          <div
+            class="absolute left-5.5 top-4 bottom-16 w-0.5 rounded-full"
+            style="
+              background: linear-gradient(
+                to bottom,
+                #4f8eff,
+                #7c5cff,
+                transparent
+              );
+            "
+          ></div>
+
+          <!-- BCA -->
+          <div class="flex gap-7 mb-7 reveal d1">
+            <div
+              class="w-11 h-11 min-w-11 rounded-full flex items-center justify-center text-xl z-10 shrink-0"
+              style="
+                background: linear-gradient(135deg, #4f8eff, #7c5cff);
+                box-shadow: 0 0 18px rgba(79, 142, 255, 0.35);
+              "
+            >
+              🎓
+            </div>
+            <div class="glass rounded-2xl p-6 flex-1">
+              <div
+                class="text-xs font-bold tracking-widest uppercase text-blue-400 mb-1"
+              >
+                2023 — 2026
+              </div>
+              <div class="font-syne font-bold mb-0.5">
+                Bachelor of Computer Applications (BCA)
+              </div>
+              <div class="text-sm dark:text-slate-400 text-slate-500 mb-4">
+                Osmania University, Hyderabad
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="glass rounded-md px-2.5 py-1 text-xs dark:text-slate-400 text-slate-500"
+                  >Data Structures</span
+                >
+                <span
+                  class="glass rounded-md px-2.5 py-1 text-xs dark:text-slate-400 text-slate-500"
+                  >DBMS</span
+                >
+                <span
+                  class="glass rounded-md px-2.5 py-1 text-xs dark:text-slate-400 text-slate-500"
+                  >Web Technologies</span
+                >
+                <span
+                  class="glass rounded-md px-2.5 py-1 text-xs dark:text-slate-400 text-slate-500"
+                  >OOP Concepts</span
+                >
+                <span
+                  class="glass rounded-md px-2.5 py-1 text-xs dark:text-slate-400 text-slate-500"
+                  >OS</span
+                >
+                <span
+                  class="glass rounded-md px-2.5 py-1 text-xs dark:text-slate-400 text-slate-500"
+                  >Networks</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Self-learning -->
+          <div class="flex gap-7 reveal d2">
+            <div
+              class="w-11 h-11 min-w-11 rounded-full flex items-center justify-center text-xl z-10 shrink-0"
+              style="
+                background: linear-gradient(135deg, #4f8eff, #7c5cff);
+                box-shadow: 0 0 18px rgba(79, 142, 255, 0.35);
+              "
+            >
+              📚
+            </div>
+            <div class="glass rounded-2xl p-6 flex-1">
+              <div
+                class="text-xs font-bold tracking-widest uppercase text-blue-400 mb-1"
+              >
+                Self-Learning
+              </div>
+              <div class="font-syne font-bold mb-0.5">
+                MERN Stack Development
+              </div>
+              <div class="text-sm dark:text-slate-400 text-slate-500 mb-4">
+                Online Courses, Projects &amp; Official Docs
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <span
+                  class="glass rounded-md px-2.5 py-1 text-xs dark:text-slate-400 text-slate-500"
+                  >React.js</span
+                >
+                <span
+                  class="glass rounded-md px-2.5 py-1 text-xs dark:text-slate-400 text-slate-500"
+                  >Node.js</span
+                >
+                <span
+                  class="glass rounded-md px-2.5 py-1 text-xs dark:text-slate-400 text-slate-500"
+                  >Express.js</span
+                >
+                <span
+                  class="glass rounded-md px-2.5 py-1 text-xs dark:text-slate-400 text-slate-500"
+                  >MongoDB</span
+                >
+                <span
+                  class="glass rounded-md px-2.5 py-1 text-xs dark:text-slate-400 text-slate-500"
+                  >JWT Auth</span
+                >
+                <span
+                  class="glass rounded-md px-2.5 py-1 text-xs dark:text-slate-400 text-slate-500"
+                  >Tailwind CSS</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-6">
+      <div class="h-px dark:bg-white/5 bg-black/5"></div>
+    </div>
+
+    <!-- ======== CONTACT ======== -->
+    <section id="contact" class="relative z-10 py-24 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="reveal">
+          <span
+            class="inline-flex items-center gap-2.5 text-xs font-bold tracking-[0.14em] uppercase text-blue-400 mb-3"
+          >
+            <span class="w-6 h-0.5 rounded" style="background: #4f8eff"></span
+            >Get In Touch
+          </span>
+        </div>
+        <h2
+          class="font-syne font-extrabold text-4xl md:text-5xl leading-tight tracking-tight mb-3 reveal d1"
+        >
+          Let's <span class="line-accent">Connect</span>
+        </h2>
+        <p
+          class="dark:text-slate-400 text-slate-500 text-base mb-12 max-w-md reveal d2"
+        >
+          Open to full-time roles, freelance projects, and collaborations. My
+          inbox is always open!
+        </p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 items-start">
+          <!-- Left: contact info -->
+          <div class="lg:col-span-2 reveal d1">
+            <p
+              class="dark:text-slate-400 text-slate-500 text-sm leading-relaxed mb-6"
+            >
+              I'm actively looking for Full Stack Developer opportunities.
+              Whether you have a position, a project, or just want to chat about
+              tech — feel free to reach out!
+            </p>
+            <div class="flex flex-col gap-3">
+              <a
+                href="mailto:dev.rajeshmurmu@gmail.com"
+                class="clink glass rounded-xl px-4 py-3.5 flex items-center gap-4 no-underline border border-transparent hover:border-blue-500/30"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl shrink-0 flex items-center justify-center text-lg"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      rgba(79, 142, 255, 0.18),
+                      rgba(79, 142, 255, 0.04)
+                    );
+                  "
+                >
+                  📧
+                </div>
+                <div>
+                  <div
+                    class="text-xs dark:text-slate-500 text-slate-400 font-semibold uppercase tracking-wide mb-0.5"
+                  >
+                    Email
+                  </div>
+                  <div
+                    class="text-sm font-semibold dark:text-slate-200 text-slate-700"
+                  >
+                    dev.rajeshmurmu@gmail.com
+                  </div>
+                </div>
+              </a>
+              <a
+                href="https://linkedin.com/in/rajeshsonmurmu"
+                target="_blank"
+                class="clink glass rounded-xl px-4 py-3.5 flex items-center gap-4 no-underline border border-transparent hover:border-blue-500/30"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl shrink-0 flex items-center justify-center text-lg"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      rgba(0, 119, 181, 0.22),
+                      rgba(0, 119, 181, 0.04)
+                    );
+                  "
+                >
+                  💼
+                </div>
+                <div>
+                  <div
+                    class="text-xs dark:text-slate-500 text-slate-400 font-semibold uppercase tracking-wide mb-0.5"
+                  >
+                    LinkedIn
+                  </div>
+                  <div
+                    class="text-sm font-semibold dark:text-slate-200 text-slate-700"
+                  >
+                    linkedin.com/in/rajeshsonmurmu
+                  </div>
+                </div>
+              </a>
+              <a
+                href="https://github.com/rajeshmurmu"
+                target="_blank"
+                class="clink glass rounded-xl px-4 py-3.5 flex items-center gap-4 no-underline border border-transparent hover:border-blue-500/30"
+              >
+                <div
+                  class="w-10 h-10 rounded-xl shrink-0 flex items-center justify-center text-lg"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      rgba(255, 255, 255, 0.1),
+                      rgba(255, 255, 255, 0.02)
+                    );
+                  "
+                >
+                  🐙
+                </div>
+                <div>
+                  <div
+                    class="text-xs dark:text-slate-500 text-slate-400 font-semibold uppercase tracking-wide mb-0.5"
+                  >
+                    GitHub
+                  </div>
+                  <div
+                    class="text-sm font-semibold dark:text-slate-200 text-slate-700"
+                  >
+                    github.com/rajeshmurmu
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: form -->
+          <div class="lg:col-span-3 glass rounded-2xl p-8 reveal d2">
+            <h3 class="font-syne font-bold text-lg mb-6">Send a Message</h3>
+            <form onsubmit="handleSubmit(event)">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <label
+                    class="block text-xs font-semibold uppercase tracking-widest dark:text-slate-500 text-slate-400 mb-1.5"
+                    >Name</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="John Doe"
+                    required
+                    class="finput w-full rounded-xl px-4 py-3 text-sm"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-xs font-semibold uppercase tracking-widest dark:text-slate-500 text-slate-400 mb-1.5"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    placeholder="john@company.com"
+                    required
+                    class="finput w-full rounded-xl px-4 py-3 text-sm"
+                  />
+                </div>
+              </div>
+              <div class="mb-4">
+                <label
+                  class="block text-xs font-semibold uppercase tracking-widest dark:text-slate-500 text-slate-400 mb-1.5"
+                  >Subject</label
+                >
+                <input
+                  type="text"
+                  placeholder="Job Opportunity / Collaboration"
+                  class="finput w-full rounded-xl px-4 py-3 text-sm"
+                />
+              </div>
+              <div class="mb-5">
+                <label
+                  class="block text-xs font-semibold uppercase tracking-widest dark:text-slate-500 text-slate-400 mb-1.5"
+                  >Message</label
+                >
+                <textarea
+                  rows="4"
+                  placeholder="Hi! I came across your portfolio and would love to connect..."
+                  required
+                  class="finput w-full rounded-xl px-4 py-3 text-sm resize-y"
+                ></textarea>
+              </div>
+              <button
+                id="submitBtn"
+                type="submit"
+                class="btn-grad w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold text-white"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  viewBox="0 0 24 24"
+                >
+                  <line x1="22" y1="2" x2="11" y2="13" />
+                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                </svg>
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== FOOTER ======== -->
+    <footer
+      class="relative z-10 dark:border-t dark:border-white/6 border-t border-black/5 px-6 md:px-16 py-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+    >
+      <p class="text-sm dark:text-slate-500 text-slate-400">
+        &copy; 2025
+        <strong class="dark:text-slate-300 text-slate-600">Rajesh Murmu</strong>
+        · Built with ❤️ &amp; MERN Stack
+      </p>
+      <div class="flex items-center gap-2.5">
+        <a
+          href="https://github.com/rajeshmurmu"
+          target="_blank"
+          title="GitHub"
+          class="w-9 h-9 glass rounded-xl flex items-center justify-center dark:text-slate-400 text-slate-500 hover:dark:text-blue-400 hover:text-blue-500 hover:border-blue-500/40 border border-transparent transition-all duration-200 no-underline"
+        >
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"
+            />
+          </svg>
+        </a>
+        <a
+          href="https://linkedin.com/in/rajeshsonmurmu"
+          target="_blank"
+          title="LinkedIn"
+          class="w-9 h-9 glass rounded-xl flex items-center justify-center dark:text-slate-400 text-slate-500 hover:dark:text-blue-400 hover:text-blue-500 hover:border-blue-500/40 border border-transparent transition-all duration-200 no-underline"
+        >
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"
+            />
+            <rect x="2" y="9" width="4" height="12" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+        </a>
+        <a
+          href="mailto:dev.rajeshmurmu@gmail.com"
+          title="Email"
+          class="w-9 h-9 glass rounded-xl flex items-center justify-center dark:text-slate-400 text-slate-500 hover:dark:text-blue-400 hover:text-blue-500 hover:border-blue-500/40 border border-transparent transition-all duration-200 no-underline"
+        >
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+            />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+        </a>
+        <a
+          href="#hero"
+          title="Back to top"
+          class="w-9 h-9 glass rounded-xl flex items-center justify-center dark:text-slate-400 text-slate-500 hover:dark:text-blue-400 hover:text-blue-500 hover:border-blue-500/40 border border-transparent transition-all duration-200 no-underline text-sm font-bold"
+          >↑</a
+        >
+      </div>
+    </footer>
+
+    <!-- ======== SCRIPTS ======== -->
+    <script src="src/script.ts" type="module"></script>
+  </body>
+</html>
