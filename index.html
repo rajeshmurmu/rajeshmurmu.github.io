@@ -75,7 +75,7 @@
 
       <div class="flex items-center gap-3">
         <button
-          onclick="toggleTheme()"
+          id="themeToggle"
           class="flex items-center gap-2 px-3 py-1.5 glass rounded-full text-sm dark:text-slate-300 text-slate-600 hover:border-blue-500/50 border border-transparent transition-all duration-200 cursor-pointer"
         >
           <span id="ti">☀️</span
@@ -84,7 +84,7 @@
           >
         </button>
         <button
-          onclick="toggleMenu()"
+          id="menuToggle"
           class="md:hidden flex flex-col justify-center gap-1.25 w-8 h-8 cursor-pointer"
           aria-label="Menu"
         >
@@ -104,38 +104,35 @@
     <!-- Mobile Menu -->
     <div
       id="mobileMenu"
-      class="hidden fixed top-16 inset-x-0 z-40 dark:bg-navy-900 bg-white border-b dark:border-white/6 border-black/5 px-6 py-5 flex-col gap-4"
+      class="hidden fixed top-16 inset-x-0 z-40 dark:bg-navy-900 bg-white border-b dark:border-white/6 border-black/5 px-6 py-5"
     >
-      <a
-        href="#about"
-        onclick="closeMenu()"
-        class="text-base font-medium dark:text-slate-200 text-slate-700 no-underline"
-        >About</a
-      >
-      <a
-        href="#skills"
-        onclick="closeMenu()"
-        class="text-base font-medium dark:text-slate-200 text-slate-700 no-underline"
-        >Skills</a
-      >
-      <a
-        href="#projects"
-        onclick="closeMenu()"
-        class="text-base font-medium dark:text-slate-200 text-slate-700 no-underline"
-        >Projects</a
-      >
-      <a
-        href="#education"
-        onclick="closeMenu()"
-        class="text-base font-medium dark:text-slate-200 text-slate-700 no-underline"
-        >Education</a
-      >
-      <a
-        href="#contact"
-        onclick="closeMenu()"
-        class="text-base font-medium dark:text-slate-200 text-slate-700 no-underline"
-        >Contact</a
-      >
+      <div class="flex flex-col items-start gap-4">
+        <a
+          href="#about"
+          class="text-base font-medium dark:text-slate-200 text-slate-700 no-underline"
+          >About</a
+        >
+        <a
+          href="#skills"
+          class="text-base font-medium dark:text-slate-200 text-slate-700 no-underline"
+          >Skills</a
+        >
+        <a
+          href="#projects"
+          class="text-base font-medium dark:text-slate-200 text-slate-700 no-underline"
+          >Projects</a
+        >
+        <a
+          href="#education"
+          class="text-base font-medium dark:text-slate-200 text-slate-700 no-underline"
+          >Education</a
+        >
+        <a
+          href="#contact"
+          class="text-base font-medium dark:text-slate-200 text-slate-700 no-underline"
+          >Contact</a
+        >
+      </div>
     </div>
 
     <!-- ======== HERO ======== -->
@@ -1307,15 +1304,18 @@
           <!-- Right: form -->
           <div class="lg:col-span-3 glass rounded-2xl p-8 reveal d2">
             <h3 class="font-syne font-bold text-lg mb-6">Send a Message</h3>
-            <form onsubmit="handleSubmit(event)">
+            <form id="contactForm" class="w-full">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                 <div>
                   <label
+                    for="name"
                     class="block text-xs font-semibold uppercase tracking-widest dark:text-slate-500 text-slate-400 mb-1.5"
                     >Name</label
                   >
                   <input
                     type="text"
+                    id="name"
+                    name="name"
                     placeholder="John Doe"
                     required
                     class="finput w-full rounded-xl px-4 py-3 text-sm"
@@ -1323,35 +1323,61 @@
                 </div>
                 <div>
                   <label
+                    for="email"
                     class="block text-xs font-semibold uppercase tracking-widest dark:text-slate-500 text-slate-400 mb-1.5"
                     >Email</label
                   >
                   <input
                     type="email"
+                    id="email"
+                    name="email"
                     placeholder="john@company.com"
                     required
                     class="finput w-full rounded-xl px-4 py-3 text-sm"
                   />
                 </div>
               </div>
-              <div class="mb-4">
-                <label
-                  class="block text-xs font-semibold uppercase tracking-widest dark:text-slate-500 text-slate-400 mb-1.5"
-                  >Subject</label
-                >
-                <input
-                  type="text"
-                  placeholder="Job Opportunity / Collaboration"
-                  class="finput w-full rounded-xl px-4 py-3 text-sm"
-                />
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <label
+                    for="mobile"
+                    class="block text-xs font-semibold uppercase tracking-widest dark:text-slate-500 text-slate-400 mb-1.5"
+                    >Mobile No</label
+                  >
+                  <input
+                    id="mobile"
+                    name="mobile"
+                    type="text"
+                    placeholder="Job Opportunity / Collaboration"
+                    class="finput w-full rounded-xl px-4 py-3 text-sm"
+                  />
+                </div>
+                <div>
+                  <label
+                    for="subject"
+                    class="block text-xs font-semibold uppercase tracking-widest dark:text-slate-500 text-slate-400 mb-1.5"
+                    >Subject</label
+                  >
+                  <input
+                    id="subject"
+                    name="subject"
+                    type="text"
+                    placeholder="Job Opportunity / Collaboration"
+                    class="finput w-full rounded-xl px-4 py-3 text-sm"
+                  />
+                </div>
               </div>
+
               <div class="mb-5">
                 <label
+                  id="message"
                   class="block text-xs font-semibold uppercase tracking-widest dark:text-slate-500 text-slate-400 mb-1.5"
                   >Message</label
                 >
                 <textarea
                   rows="4"
+                  id="message"
+                  name="message"
                   placeholder="Hi! I came across your portfolio and would love to connect..."
                   required
                   class="finput w-full rounded-xl px-4 py-3 text-sm resize-y"
